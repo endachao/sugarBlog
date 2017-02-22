@@ -16,7 +16,7 @@
             @endif
         </div>
         <div class="form-group"> <button type="submit" class="btn btn-block btn-primary">Reset</button> </div>
-        <div class="form-group clearfix"> <a class="pull-left" href="login.html">return to Login</a> <a class="pull-right" href="signup.html">Sign Up!</a> </div>
+        <div class="form-group clearfix"> <a class="pull-left" href="{{ route('login') }}">return to Login</a> <a class="pull-right" href="{{ route('register') }}">Sign Up!</a> </div>
     </form>
 </div>
 @endsection
