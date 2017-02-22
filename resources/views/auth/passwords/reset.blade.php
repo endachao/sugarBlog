@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
-@section('content')
+@section('auth-content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

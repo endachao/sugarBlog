@@ -16,10 +16,10 @@
             {};
         var themeName = themeSettings.themeName || '';
         if (themeName) {
-            document.write('<link rel="stylesheet" id="theme-style" href="css/app-' + themeName + '.css">');
+            document.write('<link rel="stylesheet" id="theme-style" href="{{ asset('/') }}css/app-' + themeName + '.css">');
         }
         else {
-            document.write('<link rel="stylesheet" id="theme-style" href="css/app.css">');
+            document.write('<link rel="stylesheet" id="theme-style" href="{{ asset('/css/app.css') }}">');
         }
     </script>
 </head>
