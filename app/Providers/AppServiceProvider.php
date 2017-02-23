@@ -26,6 +26,9 @@ class AppServiceProvider extends ServiceProvider
     {
         if ('production' != $this->app->environment()) {
             $this->app->register(IdeHelperServiceProvider::class);
+
+            $this->app->register(\Way\Generators\GeneratorsServiceProvider::class);
+            $this->app->register(\Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class);
         }
     }
 }

@@ -19,10 +19,10 @@ Auth::routes();
 
 Route::get('/backend', 'HomeController@index');
 
-// Route::get('{name}.html', function($name) {
-//     View::addExtension('html', 'php');
-//     return view(sprintf('modular.%s', $name));
-// });
+Route::get('{name}.html', function($name) {
+    View::addExtension('html', 'php');
+    return view(sprintf('modular.%s', $name));
+});
 
 Route::get('/general-setting', 'SettingController@index');
 

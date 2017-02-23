@@ -17,8 +17,8 @@ class SettingController extends Controller
 	 */
 	public function index ()
 	{
-		dd(session::all());
-		die;
+		// dd(session::all());
+		// die;
 		return view('setting.index');
 	}
 }
