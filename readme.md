@@ -1,8 +1,8 @@
-<p align="center"> <h1>Sugar<h1></p>
 
-<p align="center">
-<img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License">
-</p>
+# Sugar
+
+![License](https://poser.pugx.org/laravel/framework/license.svg)
+
 
 ## About Sugar
 
