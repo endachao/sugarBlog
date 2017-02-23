@@ -18,7 +18,9 @@ You only need to write, the other to the sugar
 
 Waiting to be added
 
+## Thanks
 
+- [Xethron/migrations-generator](https://github.com/Xethron/migrations-generator)
 
 ## License
 
