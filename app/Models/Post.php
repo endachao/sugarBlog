@@ -8,5 +8,5 @@ class Post extends Model
 {
     protected $table = 'sg_posts';
 
-    protected $fillable = ['*'];
+    protected $fillable = ['title', 'keywords', 'desc', 'category_id', 'is_publish', 'content'];
 }

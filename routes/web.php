@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/backend', 'HomeController@index');
+//Route::get('/backend', 'HomeController@index');
 
 Route::get('{name}.html', function($name) {
     View::addExtension('html', 'php');
@@ -31,3 +31,9 @@ Route::get('/email-setting', 'HomeController@index');
 Route::get('/nav-setting', 'HomeController@index');
 
 Route::get('/link-setting', 'HomeController@index');
+
+Route::group(['middleware' => 'auth', 'prefix' => 'backend'], function() {
+    Route::get('/', 'HomeController@index');
+
+    Route::resource('post', 'PostController');
+});
