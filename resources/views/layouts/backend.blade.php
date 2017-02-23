@@ -13,7 +13,7 @@
     <!-- Theme initialization -->
     <script>
         var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
+        {};
         var themeName = themeSettings.themeName || '';
         if (themeName) {
             document.write('<link rel="stylesheet" id="theme-style" href="{{ asset('/') }}css/app-' + themeName + '.css">');
@@ -34,7 +34,15 @@
                 <div class="sidebar-container">
                     <div class="sidebar-header">
                         <div class="brand">
-                            <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span>                                <span class="l l5"></span> </div> Modular Admin </div>
+                            <div class="logo"> 
+                                <span class="l l1"></span> 
+                                <span class="l l2"></span> 
+                                <span class="l l3"></span> 
+                                <span class="l l4"></span>                                
+                                <span class="l l5"></span> 
+                            </div> 
+                            Modular Admin
+                        </div>
                     </div>
                     @include('partial.nav')
                 </div>
@@ -52,35 +60,35 @@
                                         <div class="row hidden-md-down">
                                             <div class="col-xs-4"> <label class="title">Sidebar:</label> </div>
                                             <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="sidebarPosition" value="sidebar-fixed" >
-    				                        <span></span>
-    				                    </label> </div>
+                                                <input class="radio" type="radio" name="sidebarPosition" value="sidebar-fixed" >
+                                                <span></span>
+                                            </label> </div>
                                             <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="sidebarPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
+                                                <input class="radio" type="radio" name="sidebarPosition" value="">
+                                                <span></span>
+                                            </label> </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-xs-4"> <label class="title">Header:</label> </div>
                                             <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="headerPosition" value="header-fixed">
-    				                        <span></span>
-    				                    </label> </div>
+                                                <input class="radio" type="radio" name="headerPosition" value="header-fixed">
+                                                <span></span>
+                                            </label> </div>
                                             <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="headerPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
+                                                <input class="radio" type="radio" name="headerPosition" value="">
+                                                <span></span>
+                                            </label> </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-xs-4"> <label class="title">Footer:</label> </div>
                                             <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="footerPosition" value="footer-fixed">
-    				                        <span></span>
-    				                    </label> </div>
+                                                <input class="radio" type="radio" name="footerPosition" value="footer-fixed">
+                                                <span></span>
+                                            </label> </div>
                                             <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="footerPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
+                                                <input class="radio" type="radio" name="footerPosition" value="">
+                                                <span></span>
+                                            </label> </div>
                                         </div>
                                     </div>
                                     <div class="customize-item">
@@ -101,11 +109,13 @@
                 </footer>
             </aside>
             <div class="sidebar-overlay" id="sidebar-overlay"></div>
-            article
+            <article class="content charts-flot-page">
+                @yield('content')
+            </article>
             <footer class="footer">
                 <div class="footer-block buttons">
                     <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true"
-                        frameborder="0" scrolling="0" width="140px" height="20px"></iframe>
+                    frameborder="0" scrolling="0" width="140px" height="20px"></iframe>
                 </div>
                 <div class="footer-block author">
                     <ul>
@@ -114,9 +124,9 @@
                     </ul>
                 </div>
             </footer>
-            
+
             <!-- /.modal -->
-            
+
             <!-- /.modal -->
         </div>
     </div>
