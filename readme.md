@@ -21,6 +21,7 @@ Waiting to be added
 ## Thanks
 
 - [Xethron/migrations-generator](https://github.com/Xethron/migrations-generator)
+- [bosnadev/repositories](https://github.com/bosnadev/repository)
 
 ## License
 
