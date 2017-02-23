@@ -1,7 +1,7 @@
-<p align="center"> Sugar </p>
+<p align="center"> <h1>Sugar<h1></p>
 
 <p align="center">
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+<img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License">
 </p>
 
 ## About Sugar
