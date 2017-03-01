@@ -17,21 +17,23 @@ Route::get('/', function () {
 
 Auth::routes();
 
-//Route::get('/backend', 'HomeController@index');
 
 Route::get('{name}.html', function($name) {
     View::addExtension('html', 'php');
     return view(sprintf('modular.%s', $name));
 });
 
-Route::get('/general-setting', 'SettingController@index');
-
-Route::get('/email-setting', 'HomeController@index');
-
-Route::get('/nav-setting', 'HomeController@index');
-
-Route::get('/link-setting', 'HomeController@index');
-
 Route::group(['middleware' => 'auth', 'prefix' => 'backend'], function() {
+    Route::get('/backend', 'HomeController@index');
+
     Route::resource('post', 'PostController');
+
+    // 系统设置
+    Route::get('email-setting', 'SettingController@getEmail');
+    Route::post('email-setting', 'SettingController@updataEmailSetting');
+    Route::resource('general-setting', 'SettingController');
+
+    // Route::get('nav-setting', 'HomeController@index');
+
+    // Route::get('link-setting', 'HomeController@index');
 });

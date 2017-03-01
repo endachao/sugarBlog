@@ -1,6 +1,6 @@
 <nav class="menu">
     <ul class="nav metismenu" id="sidebar-menu">
-        <li class="active">
+        <li class="">
             <a href="index.html"> <i class="fa fa-home"></i> Dashboard </a>
         </li>
         <li>
@@ -96,19 +96,19 @@
                 </a></li>
             </ul>
         </li>
-        <li>
+        <li class="@yield('setting')">
             <a href="javascript:;"> <i class="fa fa-th-large"></i> 系统设置 <i class="fa arrow"></i> </a>
-            <ul>
-                <li> <a href="/general-setting">
+            <ul class="@yield('setting_ul')">
+                <li class="@yield('general_setting')"> <a href="/backend/general-setting">
                     通用设置
                 </a> </li>
-                <li> <a href="/email-setting">
+                <li class="@yield('email_setting')"> <a href="/backend/email-setting">
                     邮件设置
                 </a> </li>
-                <li> <a href="/nav-setting">
+                <li class="@yield('nav_setting')"> <a href="/backend/nav-setting">
                     导航设置
                 </a> </li>
-                <li> <a href="/link-setting">
+                <li class="@yield('link_setting')"> <a href="/backend/link-setting">
                     友情链接管理
                 </a> </li>
             </ul>
