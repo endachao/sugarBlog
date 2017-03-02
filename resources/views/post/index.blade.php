@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h3 class="title"> 文章列表 <a href="{{ route('post.create') }}" class="btn btn-primary btn-sm rounded-s">
-                                撰写新的文章
+                                撰写新文章
                             </a>
                             <div class="action dropdown">
                                 <button class="btn  btn-sm rounded-s btn-secondary dropdown-toggle" type="button"
@@ -23,7 +23,7 @@
                                 </div>
                             </div>
                         </h3>
-                        <p class="title-description"> 包含所有的文章 </p>
+                        <p class="title-description"> 包含所有文章 </p>
                     </div>
                 </div>
             </div>
@@ -115,29 +115,7 @@
             </ul>
         </div>
         <nav class="text-xs-right">
-            <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="">
-                        Prev
-                    </a></li>
-                <li class="page-item active"><a class="page-link" href="">
-                        1
-                    </a></li>
-                <li class="page-item"><a class="page-link" href="">
-                        2
-                    </a></li>
-                <li class="page-item"><a class="page-link" href="">
-                        3
-                    </a></li>
-                <li class="page-item"><a class="page-link" href="">
-                        4
-                    </a></li>
-                <li class="page-item"><a class="page-link" href="">
-                        5
-                    </a></li>
-                <li class="page-item"><a class="page-link" href="">
-                        Next
-                    </a></li>
-            </ul>
+            {{ $posts->links() }}
         </nav>
     </article>
 @endsection
