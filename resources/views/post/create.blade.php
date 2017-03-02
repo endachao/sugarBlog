@@ -3,7 +3,7 @@
 @section('content')
     <article class="content item-editor-page">
         <div class="title-block">
-            <h3 class="title"> Add new item <span class="sparkline bar" data-type="bar"></span></h3>
+            <h3 class="title"> 撰写新的文章 <span class="sparkline bar" data-type="bar"></span></h3>
         </div>
         <form name="item" method="POST" action="{{ route('post.store') }}">
             {{ csrf_field() }}
