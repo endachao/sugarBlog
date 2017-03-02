@@ -99,11 +99,16 @@
                                 <div class="item-actions-block">
                                     <ul class="item-actions-list">
                                         <li>
-                                            <a class="remove" href="{{ route('post.destroy', ['']) }}" data-toggle="modal" data-target="#confirm-modal">
+                                            <a onclick="event.preventDefault();document.getElementById('destroy-{{ $post->id }}').submit();"
+                                               class="remove" data-toggle="modal" data-target="#confirm-modal">
                                                 <i class="fa fa-trash-o "></i> </a>
+                                            <form id="destroy-{{ $post->id }}" action="{{ route('post.destroy', ['post' => $post->id]) }}" method="POST" style="display: none;">
+                                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+                                            </form>
                                         </li>
                                         <li>
-                                            <a class="edit" href="item-editor.html"> <i class="fa fa-pencil"></i> </a>
+                                            <a class="edit" href="{{ route('post.edit', ['post' => $post->id]) }}"> <i class="fa fa-pencil"></i> </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -132,7 +137,7 @@
             tabSize: 4,
             autosave: {
                 enabled: true,
-                uniqueId: 'junjun'
+                uniqueId: 'sugar'
             },
 //            status: ["autosave", "lines", "words", "cursor"],
         });

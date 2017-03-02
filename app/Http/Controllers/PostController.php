@@ -45,6 +45,7 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         $this->postRepository->create($request->all());
+        return redirect(route('post.index'));
     }
 
     /**
@@ -66,19 +67,21 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = $this->postRepository->find($id);
+        return view('post.edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\PostRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, $id)
     {
-        //
+        $this->postRepository->updateRich($request->all(), $id);
+        return redirect(route('post.index'));
     }
 
     /**

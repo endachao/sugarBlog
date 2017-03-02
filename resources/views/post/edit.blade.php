@@ -3,15 +3,16 @@
 @section('content')
     <article class="content item-editor-page">
         <div class="title-block">
-            <h3 class="title"> 撰写新文章 <span class="sparkline bar" data-type="bar"></span></h3>
+            <h3 class="title"> 编辑文章 <span class="sparkline bar" data-type="bar"></span></h3>
         </div>
-        <form name="item" method="POST" action="{{ route('post.store') }}">
+        <form name="item" method="POST" action="{{ route('post.update', ['post' => $post->id]) }}">
             {{ csrf_field() }}
+            {{ method_field('PUT') }}
             <div class="card card-block">
                 <div class="form-group row {{ $errors->has('title') ? ' has-error' : '' }}">
                     <label class="col-sm-2 form-control-label text-xs-right">标题：</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="title" placeholder="" value="{{ old('title') }}">
+                        <input type="text" class="form-control" name="title" placeholder="" value="{{ $post->title }}">
                         @if ($errors->has('title'))
                             <span class="has-error">{{ $errors->first('title') }}</span>
                         @endif
@@ -20,7 +21,7 @@
                 <div class="form-group row {{ $errors->has('keywords') ? ' has-error' : '' }}">
                     <label class="col-sm-2 form-control-label text-xs-right">关键字：</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="keywords" placeholder="" value="{{ old('keywords') }}">
+                        <input type="text" class="form-control" name="keywords" placeholder="" value="{{ $post->keywords }}">
                         @if ($errors->has('keywords'))
                             <span class="has-error">{{ $errors->first('keywords') }}</span>
                         @endif
@@ -29,7 +30,7 @@
                 <div class="form-group row {{ $errors->has('desc') ? ' has-error' : '' }}">
                     <label class="col-sm-2 form-control-label text-xs-right" for="desc">描述：</label>
                     <div class="col-sm-10">
-                        <textarea name="desc" id="desc" cols="30" rows="5" class="form-control">{{ old('desc') }}</textarea>
+                        <textarea name="desc" id="desc" cols="30" rows="5" class="form-control">{{ $post->desc }}</textarea>
                         @if ($errors->has('desc'))
                             <span class="has-error">{{ $errors->first('desc') }}</span>
                         @endif
@@ -38,7 +39,7 @@
                 <div class="form-group row {{ $errors->has('content') ? ' has-error' : '' }}">
                     <label class="col-sm-2 form-control-label text-xs-right" for="content">内容：</label>
                     <div class="col-sm-10">
-                        <textarea name="content" id="content" cols="30" rows="10" class="form-control">{{ old('content') }}</textarea>
+                        <textarea name="content" id="content" cols="30" rows="10" class="form-control">{{ $post->content }}</textarea>
                         @if ($errors->has('desc'))
                             <span class="has-error">{{ $errors->first('content') }}</span>
                         @endif
@@ -75,7 +76,7 @@
                     <div class="col-sm-10">
                         <input type="hidden" name="draft_id" value="" />
                         <button type="submit" class="btn btn-primary">
-                            添加
+                            保存
                         </button>
                     </div>
                 </div>
