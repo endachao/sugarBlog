@@ -1,22 +1,42 @@
 <?php
+/**
+ * Sugar is a blogger based on the Laravel framework
+ * Sugar is an ultimate blog product
+ * Sugar can keep you focused on writing
+ * You only need to write, the other to the sugar
+ * The Sugar is open-sourced software licensed under the MIT license.
+ * Copyright (c) 2017.
+ *
+ * @author jhasheng@hotmail.com
+ */
 
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PostRequest;
 use App\Repositories\PostRepository;
-use Illuminate\Http\Request;
 
+/**
+ * Class PostController
+ * @package App\Http\Controllers
+ */
 class PostController extends Controller
 {
+    /**
+     * @var PostRepository
+     */
     protected $postRepository;
 
+    /**
+     * PostController constructor.
+     * @param PostRepository $postRepository
+     */
     public function __construct(PostRepository $postRepository)
     {
         $this->postRepository = $postRepository;
     }
 
     /**
-     * Display a listing of the resource.
+     * 后台文章列表
      *
      * @return \Illuminate\Http\Response
      */
@@ -27,7 +47,7 @@ class PostController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 撰写文章页面
      *
      * @return \Illuminate\Http\Response
      */
@@ -37,7 +57,7 @@ class PostController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * 保存新文章
      *
      * @param  \App\Http\Requests\PostRequest  $request
      * @return \Illuminate\Http\Response
@@ -49,18 +69,19 @@ class PostController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * 查看新文章
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $post = $this->postRepository->find($id);
+        return view('post.edit', compact('post'));
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * 编辑文章页面
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -72,7 +93,7 @@ class PostController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * 更新文章
      *
      * @param  \App\Http\Requests\PostRequest  $request
      * @param  int  $id
@@ -85,13 +106,14 @@ class PostController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * 删除文章
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $this->postRepository->delete($id);
+        return redirect(route('post.index'));
     }
 }
