@@ -23,7 +23,7 @@ Route::get('{name}.html', function($name) {
 });
 // 后台路由写在这里
 Route::group(['middleware' => 'auth', 'prefix' => 'backend'], function() {
-    Route::get('/backend', 'HomeController@index');
+    Route::get('/', 'HomeController@index');
 
     Route::resource('post', 'PostController');
 
