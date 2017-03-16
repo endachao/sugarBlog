@@ -17,12 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('{name}.html', function($name) {
+Route::get('{name}.html', function ($name) {
     View::addExtension('html', 'php');
     return view(sprintf('modular.%s', $name));
 });
 // 后台路由写在这里
-Route::group(['middleware' => 'auth', 'prefix' => 'backend'], function() {
+
+Route::group(['middleware' => 'auth', 'prefix' => 'backend', 'namespace' => 'Backend'], function () {
+
     Route::get('/', 'HomeController@index');
 
     Route::resource('post', 'PostController');
@@ -32,5 +34,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'backend'], function() {
     Route::post('email-setting', 'SettingController@updataEmailSetting');
     Route::resource('general-setting', 'SettingController');
 
-    // Route::get('nav-setting', 'HomeController@index');
+    Route::resource('page', 'PageController');
+
 });

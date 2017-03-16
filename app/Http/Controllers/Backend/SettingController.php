@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use Session;
 
 use App\Repositories\SettingRepository;
 use App\Http\Requests\GeneralSettingRequest;
+use App\Http\Controllers\Controller;
 
 class SettingController extends Controller
 {

@@ -10,10 +10,11 @@
  * @author jhasheng@hotmail.com
  */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Requests\PostRequest;
 use App\Repositories\PostRepository;
+use App\Http\Controllers\Controller;
 
 /**
  * Class PostController
