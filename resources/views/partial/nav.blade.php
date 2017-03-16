@@ -88,10 +88,10 @@
         <li>
             <a href=""> <i class="fa fa-file-text-o"></i> 单页面管理 <i class="fa arrow"></i> </a>
             <ul>
-                <li><a href="items-list.html">
+                <li><a href="{{ route('page.create') }}">
                     创建单页面
                 </a></li>
-                <li><a href="item-editor.html">
+                <li><a href="{{ route('page.index') }}">
                     单页面列表
                 </a></li>
             </ul>

@@ -22,6 +22,7 @@ Waiting to be added
 
 - [Xethron/migrations-generator](https://github.com/Xethron/migrations-generator)
 - [bosnadev/repositories](https://github.com/bosnadev/repository)
+- [laravelcollective/html](https://laravelcollective.com/)
 
 ## License
 
